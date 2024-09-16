@@ -44,8 +44,9 @@ public class LoginSteps {
 	}
 
 	@Then("the user should be redirected to the MyAccount Page")
-	public void the_user_should_be_redirected_to_the_my_account_page() {
+	public void the_user_should_be_redirected_to_the_my_account_page() throws InterruptedException {
 		map=new MyAccountPage(BaseClass.getDriver());
+		Thread.sleep(3000);
 		boolean targetPage = map.isMyAccountPageExists();
 		Assert.assertEquals(targetPage, true);
 	}
