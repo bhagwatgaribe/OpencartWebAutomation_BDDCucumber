@@ -1,11 +1,14 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -20,7 +23,7 @@ public class HomePage extends BasePage{
 	WebElement lnkLogin;
 	
 	public void clickOnMyAccount() {
-		lnkMyAccount.click();
+		js.executeScript("arguments[0].click();", lnkMyAccount);
 	}
 	
 	public void clickOnRegister() {
