@@ -10,7 +10,7 @@ public class HomePage extends BasePage{
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//span[text()='My Account']")
+	@FindBy(css = "a[title='My Account'] span[class='hidden-xs hidden-sm hidden-md']")
 	WebElement lnkMyAccount;
 	
 	@FindBy(xpath = "//a[text()='Register']")
