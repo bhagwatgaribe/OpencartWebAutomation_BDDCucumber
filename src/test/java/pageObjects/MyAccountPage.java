@@ -16,13 +16,14 @@ public class MyAccountPage extends BasePage {
 	@FindBy(xpath = "//div[@class='list-group']//a[text()='Logout']")
 	WebElement lnkLogout;
 
-	public boolean isMyAccountPageExists() // MyAccount Page heading display status
+	public String isMyAccountPageExists() // MyAccount Page heading display status
 	{
 		try {
-			return (msgHeading.isDisplayed());
+			return (msgHeading.getText());
 		} catch (Exception e) {
-			return (false);
+			return e.getMessage();
 		}
+		
 	}
 
 	public void clickLogout() {

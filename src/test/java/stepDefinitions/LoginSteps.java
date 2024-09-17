@@ -46,7 +46,7 @@ public class LoginSteps {
 	@Then("the user should be redirected to the MyAccount Page")
 	public void the_user_should_be_redirected_to_the_my_account_page() {
 		map=new MyAccountPage(BaseClass.getDriver());
-		boolean targetPage = map.isMyAccountPageExists();
-		Assert.assertEquals(targetPage, true);
+		String confmsg = map.isMyAccountPageExists();
+		Assert.assertEquals(confmsg, "My Account");
 	}
 }
