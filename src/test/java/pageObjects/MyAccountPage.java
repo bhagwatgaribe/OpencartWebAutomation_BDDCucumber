@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MyAccountPage extends BasePage {
-	
+
 	public MyAccountPage(WebDriver driver) {
 		super(driver);
 	}
@@ -16,14 +16,13 @@ public class MyAccountPage extends BasePage {
 	@FindBy(xpath = "//div[@class='list-group']//a[text()='Logout']")
 	WebElement lnkLogout;
 
-	public String isMyAccountPageExists() // MyAccount Page heading display status
+	public boolean isMyAccountPageExists() // MyAccount Page heading display status
 	{
 		try {
-			return (msgHeading.getText());
+			return (msgHeading.isDisplayed());
 		} catch (Exception e) {
-			return e.getMessage();
+			return (false);
 		}
-		
 	}
 
 	public void clickLogout() {
